@@ -4,7 +4,7 @@ Runs The Print Shop 4 (4.1, build 900) natively on Apple silicon by statically
 recompiling its x86_64 executable to arm64 and shipping both slices in one
 Universal 2 binary. No Rosetta needed.
 
-The original app is not included. Bring your own copy.
+You can download the compiled DMG on MacSerialJunkie or MacBB.
 
 ## How it works
 
