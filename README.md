@@ -40,9 +40,27 @@ python3 tools/crash.py                           # summarize the newest PS4.arm6
 ./install.sh "/Applications/The Print Shop 4.app" # lipo x86_64 + arm64, ad-hoc sign, back up the old binary to out/
 ```
 
+## Disk image
+
+`make-dmg.sh` builds `out/The_Print_Shop_4_for_Mac_4.1-U2B.dmg` from MacKiev's
+own image, keeping its volume name, background and window layout. It:
+
+- adds the arm64 slice to the template's app and re-signs it (ad hoc);
+- stamps 4.1-U2B into the display version strings. `CFBundleVersion` stays
+  900 because the in-app updater compares it as a number;
+- adds the user guide bottom-left, with Registration bottom-right.
+
+```sh
+./make-dmg.sh The_Print_Shop_4_for_Mac.dmg The_Print_Shop_4_User_Guide.pdf 4.1-U2B
+```
+
+The template is never modified. Changes go to a shadow file, so it needs about
+5 GB free for the compressed output.
+
 ## Known issues
 
 - Edit > Select All with text on the page reports "Correct Spell: Unknown
-  error encountered". The original x86_64 app does the same: its spell and
-  hyphenation dictionaries (`Iens9522.dat`, `Henis321.dat`) are not part of
-  the app bundle.
+  error encountered" when `Contents/Resources/Dictionaries/` (`Iens9522.dat`,
+  `Henis321.dat`) is missing from the app. The original x86_64 app does the
+  same. MacKiev's DMG includes the folder, so apps built with `make-dmg.sh`
+  have it.
