@@ -1,0 +1,87 @@
+# <import symbol> <encoding> [native symbol to bind instead]
+# Encodings use ObjC @encode letters for the arm64 declaration; '.' = variadic.
+# '!' marks imports the runtime implements itself (objc_msgSend family etc).
+_objc_msgSend ! _objc_msgSend
+_objc_msgSend_stret ! _objc_msgSend
+_objc_msgSendSuper2 ! _objc_msgSendSuper2
+_objc_msgSendSuper2_stret ! _objc_msgSendSuper2
+_acos dd
+_asin dd
+_atan2 ddd
+_div {?=ii}ii
+_fma dddd
+_fmod ddd
+_hypot ddd
+_llround qd
+_log dd
+_log10 dd
+_lrint qd
+_lround qd
+_memchr ^v^viQ
+_pow ddd
+_remainder ddd
+_round dd
+_sin dd
+_strchr **i
+_strstr ***
+_dispatch_once v^q@?
+_dispatch_sync v@@?
+_objc_sync_enter i@
+_objc_sync_exit i@
+_objc_storeStrong v^@@
+_objc_setProperty_nonatomic_copy v@:@q
+_objc_setProperty_nonatomic v@:@q
+_objc_setProperty_atomic_copy v@:@q
+_objc_setProperty_atomic v@:@q
+_objc_retainAutoreleasedReturnValue @@
+_objc_retainAutoreleaseReturnValue @@
+_objc_retain @@
+_objc_release v@
+_objc_getProperty @@:qB
+_objc_exception_throw v@
+_objc_exception_rethrow v
+_objc_begin_catch ^v^v
+_objc_end_catch v
+_objc_destroyWeak v^@
+_objc_copyStruct v^v^vqBB
+_objc_autoreleaseReturnValue @@
+_objc_autoreleasePoolPush ^v
+_objc_autoreleasePoolPop v^v
+_objc_autorelease @@
+_objc_alloc @#
+___strncpy_chk ***QQ
+___strncat_chk ***QQ
+___strcpy_chk ***Q
+___strcat_chk ***Q
+___stack_chk_fail v
+___sprintf_chk i*iQ*.
+___memcpy_chk ^v^v^vQQ
+___bzero v^vQ
+___dynamic_cast ^v^v^v^vq
+___cxa_throw ! ___cxa_throw
+___cxa_rethrow ! ___cxa_rethrow
+___cxa_guard_release v^q
+___cxa_guard_acquire i^q
+___cxa_guard_abort v^q
+___cxa_get_exception_ptr ^v^v
+___cxa_free_exception v^v
+___cxa_end_catch v
+___cxa_call_unexpected v^v
+___cxa_begin_catch ^v^v
+___cxa_atexit i^v^v^v
+___cxa_allocate_exception ^vQ
+__Znwm ^vQ
+__ZnwmRKSt9nothrow_t ^vQ^v
+__Znam ^vQ
+__ZnamRKSt9nothrow_t ^vQ^v
+__ZdlPv v^v
+__ZdaPv v^v
+__ZdlPvRKSt9nothrow_t v^v^v
+__ZSt9terminatev v
+__ZNSt9exceptionD2Ev v^v
+__ZNSt9bad_allocD1Ev v^v
+__ZNSt3__16chrono12system_clock3nowEv q
+__ZNSt3__112__next_primeEm QQ
+__ZNSt11logic_errorC2EPKc v^v*
+__Unwind_Resume ! __Unwind_Resume
+__Unwind_Resume_or_Rethrow ! __Unwind_Resume_or_Rethrow

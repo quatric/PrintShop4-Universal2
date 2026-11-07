@@ -1,0 +1,14 @@
+# Original application (input) and generated outputs
+orig/
+test/
+gen/
+obj/
+out/
+
+.venv/
+__pycache__/
+*.o
+.DS_Store
+
+# Local tooling
+.codesight/
